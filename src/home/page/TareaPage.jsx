@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import { WindowPage } from "../components/WindowPage"
-import { WindowStartComponent } from "../components/windowStartComponent"
+
 import { startActividadesThunks, startGuardado } from "../../store/actividades/actividadesThunks"
 import { CreateNewActiviteComponent } from "../components/CreateNewActiviteComponent"
 import { useEffect } from "react"
@@ -31,7 +31,7 @@ export const TareaPage = () => {
         <CreateNewActiviteComponent/>
         :<>
         <WindowPage />
-        <WindowStartComponent/>
+     
         <Link to={`/homepage/${name}/createNewActivitie`}>
         <button className="btn btn-dark boton-posicion">+</button>
         {/* <button className="btn btn-dark boton-posicion" onClick={onClickNewPlan}>+</button> */}
