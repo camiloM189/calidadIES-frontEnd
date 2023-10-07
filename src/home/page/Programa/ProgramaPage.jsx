@@ -14,7 +14,7 @@ export const ProgramaPage = () => {
     dispatch(clearProgramasFiltrado());
     dispatch(vaciarOportunidadesDeMejora());
     dispatch(vaciarPlanDeMejoramiento());
-  }, [programas])
+  }, [])
 
   const crearPlanDeMejoramiento = (event) => {
     navigate(`/homepage/${event}/planDeMejoramiento`);

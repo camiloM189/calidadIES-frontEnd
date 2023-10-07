@@ -10,6 +10,8 @@ export const authSlice = createSlice({
     photoURL:null,
     errorMessage:undefined,
     aplication:false,
+    codigo:null,
+    password:null
 },
 reducers: {
   login:(state,{payload}) => {
@@ -37,10 +39,21 @@ reducers: {
   },
   onPage:(state) => {
     state.aplication = true;
+  },
+  onCodigo:(state,{payload}) => {
+    state.codigo = payload.codigo;
+    state.email = payload.email;
+    state.name = payload.name;
+    state.password = payload.password;
+  },
+  onClear:(state,{payload}) => {
+    state.password = null
+    state.codigo = null
+
   }
 }
 });
           
 
 // Action creators are generated for each case reducer function
-export const { login,logout,checkingCredentials,clearErrorMessage,onPage } = authSlice.actions;
+export const { login,logout,checkingCredentials,clearErrorMessage,onPage,onCodigo,onClear } = authSlice.actions;

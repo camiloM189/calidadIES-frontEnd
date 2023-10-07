@@ -1,6 +1,6 @@
 import calidadiesApi from "../../api/calidadiesApi";
 import { vaciarProgramas } from "../programas/planDeMejoramientoSlice";
-import { checkingCredentials, clearErrorMessage, login, logout } from "./authSlice"
+import { checkingCredentials, clearErrorMessage, login, logout, onCodigo } from "./authSlice"
 
 
 // const {status,displayName} = getState().auth;
@@ -29,10 +29,33 @@ export const starLoginWithEmailAndPassword = ({email,password}) => {
         }
     }
 }
+export const startComprobarEmail = ({name,email,password}) => {
+    return async(dispatch) => {
+        try {
+
+            const {data} = await calidadiesApi.post('/auth/comprobarEmail',{email});
+  
+            const {codigo} = data;
+            console.log(codigo.length);
+            dispatch(onCodigo({codigo,name,email,password}))
+
+            if(codigo.length > 0){
+                await calidadiesApi.post('/auth/enviarCodigo',{name,email,password,codigo});
+
+            }
+        } catch (error) {
+    
+            dispatch(logout(error.response.data.msg || '--'))
+        }
+
+
+    }
+}
 export const startRegister = ({name,email,password}) => {
     return async(dispatch) => {
-        dispatch(checkingCredentials());
-
+        
+         dispatch(checkingCredentials());
+       
         try {
             const {data} = await calidadiesApi.post('/auth/new',{email,password,name})
             console.log(data);

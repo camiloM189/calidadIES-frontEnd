@@ -21,7 +21,10 @@ export const EditarPrograma = () => {
     console.log(idPrograma);
     dispatch(borrarPrograma({idPrograma}))
     Swal.fire('El Programa se ha borrado con exito',errorMessage,'success')
-
+    dispatch(getProgramasTitle());
+    dispatch(clearProgramasFiltrado());
+    dispatch(vaciarOportunidadesDeMejora());
+    dispatch(vaciarPlanDeMejoramiento());
     navigate(`/homepage`)
 }
   return (
