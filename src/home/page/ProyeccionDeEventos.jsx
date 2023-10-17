@@ -14,6 +14,7 @@ export const ProyeccionDeEventos = () => {
     let {onInputChange,indicador,fecha1,fecha2,fecha3,fecha4,
         fecha5,fecha6,fecha7,onResetForm
       } = useForm('');
+  const [porcentaje, setPorcentaje] = useState(null);
       
   
     const Navigate = useNavigate();
@@ -32,15 +33,7 @@ export const ProyeccionDeEventos = () => {
        
     const createProyeccionDeEventos = (event) => {
         event.preventDefault();
-        console.log(indicador);
-
-        console.log(fecha1);
-        console.log(fecha2);
-        console.log(fecha3);
-        console.log(fecha4);
-        console.log(fecha5);
-        console.log(fecha6);
-        console.log(fecha7);
+        
 
 
       if(indicador.length === 0)return;

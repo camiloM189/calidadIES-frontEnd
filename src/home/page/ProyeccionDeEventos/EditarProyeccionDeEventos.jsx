@@ -160,7 +160,7 @@ export const EditarProyeccionDeEventos = () => {
 </div>
  <h2 className="text-center">Proyeccion de Eventos</h2>
  
- <Link to={`/homepage/${idPrograma}/${idPlanDeMejoramiento}/${idOportunidadDeMejora}/${idActividadesDeMejora}/nuevo`}>
+ <Link to={`/homepage/${idPrograma}/${idPlanDeMejoramiento}/${idOportunidadDeMejora}/${idActividadesDeMejora}/nueva`}>
 
 
 

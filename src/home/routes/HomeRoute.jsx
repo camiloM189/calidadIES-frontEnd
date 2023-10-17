@@ -33,6 +33,9 @@ import { EditarActividadesDeMejora } from '../page/ActividadesDeMejoramiento/Edi
 import { EditarProyeccionDeEventos } from '../page/ProyeccionDeEventos/EditarProyeccionDeEventos'
 import { ProyeccionDeEventos } from '../page/ProyeccionDeEventos/ProyeccionDeEventos'
 import { EditarOportunidadDeMejora } from '../page/OportunidadDeMejora/EditarOportunidadDeMejora'
+import { CrearUniversidad } from '../page/universidad/CrearUniversidad'
+import { VerUniversidades } from '../page/universidad/VerUniversidades'
+import { VerUsuarios } from '../page/universidad/VerUsuarios'
 
 
 
@@ -45,6 +48,10 @@ export const HomeRoute = () => {
     <>
         <Nabvar/>
         <Routes>
+        <Route path='/homepage/crearUniversidad' element={<CrearUniversidad/>}/>
+        <Route path='/homepage/verUniversidad' element={<VerUniversidades/>}/>
+        <Route path='/homepage/verUsuarios' element={<VerUsuarios/>}/>
+
           
             <Route path='/homepage' element={<ProgramaPage/>}/>
             <Route path='/homepage/newPrograma' element={<CrearPrograma/>}/>

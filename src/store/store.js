@@ -5,6 +5,8 @@ import { notesSlice } from './actividades/notesSlice'
 import { planDeMejoramientoSlice } from './programas/planDeMejoramientoSlice'
 import { calidadDeContenido } from './programas/calidadDeContenido'
 import { oportunidadDeMejoraSlice } from './programas/oportunidadDeMejoraSlice'
+import { seguimientoSlice } from './programas/seguimientoSlice'
+import { universidadesSlice } from './programas/UniversidadesSlice'
 
 export const store = configureStore({
   reducer: {
@@ -14,7 +16,8 @@ export const store = configureStore({
     planDeMejoramiento:planDeMejoramientoSlice.reducer,
     calidadDeContenido:calidadDeContenido.reducer,
     oportunidadDeMejoraSlice:oportunidadDeMejoraSlice.reducer,
-    
+    seguimientoSlice:seguimientoSlice.reducer,
+    universidadesSlice:universidadesSlice.reducer,
   },
   
 

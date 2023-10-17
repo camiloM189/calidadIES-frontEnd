@@ -1,25 +1,74 @@
 // import { file } from "googleapis/build/src/apis/file";
 import calidadiesApi from "../../api/calidadiesApi";
+import { startObtenerIdUniversidad } from "../auth/authThunks";
 import { filtrarActividadesDeMejora } from "./OportunidadDeMejoraThunks";
+import { obtenerIdUniversidades, obtenerUniversidades, obtenerUsuarios } from "./UniversidadesSlice";
 import { getAspectosCurriculares, getDenominacion, getInfraestructuraFísica, getInnovación, getJustificaciónDelPrograma, getMediosEducativos, getOrganizaciónDeLasActividadesAcadémicasYProcesoFormativo, getProfesores, getRelaciónConElSectorExterno } from "./calidadDeContenido";
 import {ObtenerTitulosDeActividadesDeOportunidadDeMejora, ProyeccionDeEventos, agragarOportunidadDeMejora, crearPoryeccionDeEventos, crearProgramas, createPlanDeMejoramiento, filtradoUnaOportunidadDeMejora, filtrarActividadDeMejora, filtrarActividades, getOportunidadDeMejoras, getPlanDeMejoramiento, getProgramas, getProgramasFiltrado, nombreDeLaActividadDeMejoramiento, seleccionarCondicionesDeCalidad,OnObtenerNotas, setNoteActive, closeNote, obtenerFiles, vaciarFiles, vaciarActividadesDeMejoramiento } from "./planDeMejoramientoSlice";
 
+
+export const obtenerTodosLosUsuarios = () => {
+    return async(dispatch,getState) => {
+       
+       const {data} = await calidadiesApi.post(`/program/obtenerUsuarios`);
+       const {Usuarios} = data;
+
+        dispatch(obtenerUsuarios(Usuarios));
+        
+
+
+    }
+}
+export const obtenerTodasLasUniversidades = () => {
+    return async(dispatch,getState) => {
+       
+       const {data} = await calidadiesApi.post(`/program/obtenerTodasUniversidades`);
+       const {Universidad} = data;
+
+        dispatch(obtenerUniversidades(Universidad));
+        
+
+
+    }
+}
+export const EnviarcodigoUniversidadId = ({idUniversidad,uid}) => {
+    return async(dispatch,getState) => {
+
+
+        await calidadiesApi.post(`/program/agregarUsuarioUniversidad`,{uidUsuario:uid,idUniversidad});
+
+        dispatch(startObtenerIdUniversidad({uid}));
+      
+        
+        
+
+    }
+
+}
 export const getProgramasTitle = () => {
     return async(dispatch,getState) => {
-        
-        const {data} = await calidadiesApi.get(`/program/programas`);
+    const {idUniversidad } = await getState().auth;
+
+
+        const {data} = await calidadiesApi.post(`/program/programas`,{idUniversidad});
         const {programa} = data;
         dispatch(getProgramas(programa))
+        
     }
 }
 export const getProgramasTitleId = ({idPrograma}) => {
     return async(dispatch,getState) => {
-        
-        const {data} = await calidadiesApi.get(`/program/programas`);
+    const {idUniversidad } = await getState().auth;
+        const {data} = await calidadiesApi.post(`/program/programas`,{idUniversidad});
         const {programa} = data;
+      
         const programaFiltrado = programa.filter(program => program._id === idPrograma);
-        const [{Programa:name}] = programaFiltrado;
-        dispatch(getProgramasFiltrado(name));
+  
+        if(programaFiltrado.length > 0){
+            const [{Programa:name}] = programaFiltrado;
+            dispatch(getProgramasFiltrado(name));
+        }
+        
 
 
 
@@ -27,8 +76,8 @@ export const getProgramasTitleId = ({idPrograma}) => {
 }
 export const createPrograma = ({programa}) => {
     return async(dispatch,getState) => {
-    const { name,uid } = await getState().auth;
-    const {data} = await calidadiesApi.post(`/program/crear`,{Programa:programa,usuario:name,uidUsuario:uid});
+    const { name,uid,idUniversidad } = await getState().auth;
+    const {data} = await calidadiesApi.post(`/program/crear`,{Programa:programa,usuario:name,uidUsuario:uid,idUniversidad:idUniversidad});
     dispatch(getProgramasTitle())
 
     }
@@ -49,6 +98,7 @@ export const borrarPrograma = ({idPrograma}) => {
         }
       }
       await calidadiesApi.delete(`/program/delete/${idPrograma}`);
+      dispatch(getProgramasTitle());
 
     }
 }
@@ -111,7 +161,7 @@ export const obtenerOportunidadDeMejoraPorId = ({idPlanDeMejoramiento}) => {
         dispatch(getProfesores(Profesores.length))
         dispatch(getMediosEducativos(MediosEducativos.length))
         dispatch(getInfraestructuraFísica(InfraestructuraFísica.length))
-        console.log(obtenerOportunidadDeMejoraPorId);
+       
 
 
         dispatch(getOportunidadDeMejoras(obtenerOportunidadDeMejoraPorId))
@@ -276,16 +326,17 @@ export const filtrarUnaActividadDeOportunidadDeMejora = ({idOportunidadDeMejora,
         dispatch(nombreDeLaActividadDeMejoramiento(filtrarOportunidadDeMejora[0].tituloDeActividades))
     }
 }
-export const startCrearPoryeccionDeEventos = ({idPlanDeMejoramiento,idPrograma,idActividadesDeMejora,programa,tituloDeActividades,indicador,fecha1,fecha2,fecha3,fecha4,fecha5,fecha6,fecha7,idOportunidadDeMejora}) => {
+export const startCrearPoryeccionDeEventos = ({idPlanDeMejoramiento,idPrograma,idActividadesDeMejora,programa,tituloDeActividades,indicador,fecha1,fecha2,fecha3,fecha4,fecha5,fecha6,fecha7,idOportunidadDeMejora,porcentajes}) => {
     return async(dispatch,getState) => {
+   
         const start = new Date().getFullYear()
         const totalDeProyecciones = [fecha1, fecha2, fecha3, fecha4, 
             fecha5, fecha6, fecha7].reduce((total, fecha) => total + parseInt(fecha), 0)
-          
-        const {data} = await calidadiesApi.post(`/program/crearProyeccionDeEventos`,{tituloDeActividades,totalDeProyecciones,idActividadesDeMejora,idPlanDeMejoramiento,idPrograma,programa,indicador,fecha1,fecha2,fecha3,fecha4,fecha5,fecha6,fecha7,start,idOportunidadDeMejora});
+ 
+        const {data} = await calidadiesApi.post(`/program/crearProyeccionDeEventos`,{tituloDeActividades,totalDeProyecciones,idActividadesDeMejora,idPlanDeMejoramiento,idPrograma,programa,indicador,fecha1,fecha2,fecha3,fecha4,fecha5,fecha6,fecha7,start,idOportunidadDeMejora,porcentajes});
         const {ProyeccionDeEventos} = data;
         dispatch(crearPoryeccionDeEventos(ProyeccionDeEventos))
-        
+        console.log(ProyeccionDeEventos);
      
     }
 }
@@ -373,22 +424,65 @@ export const StartObtenerNotas = ({idProyeccionDeEventos}) => {
         
     }
 }
-export const crearNotas = ({titulosDeNotas,files,bodyDeNotas,idPlanDeMejoramiento,idPrograma,idOportunidadDeMejora,idActividadesDeMejora,idProyeccionDeEventos,start,mes,dia}) => {
+export const crearNotas = ({titulosDeNotas,arraysFiles,bodyDeNotas,idPlanDeMejoramiento,idPrograma,idOportunidadDeMejora,idActividadesDeMejora,idProyeccionDeEventos,start,mes,dia,seguimiento,yearSeguimiento}) => {
     return async(dispatch,getState) => {
     
+ 
+
 
     const {data} = await calidadiesApi.post(`/program/crearNotas`,{titulosDeNotas,bodyDeNotas,idPlanDeMejoramiento,idPrograma,
-        start,dia,mes,idOportunidadDeMejora,idActividadesDeMejora,idProyeccionDeEventos});
+        start,dia,mes,idOportunidadDeMejora,idActividadesDeMejora,idProyeccionDeEventos,seguimiento,yearSeguimiento});
     const {CrearNotas:crearNota} = data;
+
  
     let year = crearNota.start
     let idNota = crearNota._id;
-     if(files.length > 0){
-         dispatch(uploadFiles(files,idNota,idPlanDeMejoramiento,idPrograma,idOportunidadDeMejora,idActividadesDeMejora,idProyeccionDeEventos))
+  
+
+     if(arraysFiles.length > 0){
+       
+         dispatch(uploadFiles(arraysFiles,idNota,idPlanDeMejoramiento,idPrograma,idOportunidadDeMejora,idActividadesDeMejora,idProyeccionDeEventos))
      }
      dispatch(StartObtenerNotas({idProyeccionDeEventos}));
-     dispatch(obtenerLaFechaDeOportunidadDeMejora({idPlanDeMejoramiento,year,idProyeccionDeEventos,idActividadesDeMejora}))
+    //  dispatch(obtenerLaFechaDeOportunidadDeMejora({idPlanDeMejoramiento,year,idProyeccionDeEventos,idActividadesDeMejora}))
+     dispatch(obtenerOportunidadDeMejoraPorIdAgregarSeguimiento({idPlanDeMejoramiento,year,start,idProyeccionDeEventos,idActividadesDeMejora,seguimiento,yearSeguimiento}))
 
+
+    }
+}
+export const obtenerOportunidadDeMejoraPorIdAgregarSeguimiento = ({idPlanDeMejoramiento,year,start,idProyeccionDeEventos,idActividadesDeMejora,seguimiento,yearSeguimiento}) => {
+    return async(dispatch,getState) => {
+        const {data} = await calidadiesApi.post(`/program/obtenerOportunidadDeMejoraPorId`,{idPlanDeMejoramiento});
+        const {obtenerOportunidadDeMejoraPorId} = data;
+        const {start:inicio} = obtenerOportunidadDeMejoraPorId[0]
+     
+         const fecha1 = inicio
+         const fecha2 = inicio + 1
+         const fecha3 = inicio + 2
+         const fecha4 = inicio + 3
+         const fecha5 = inicio + 4
+         const fecha6 = inicio + 5
+         const fecha7 = inicio + 6
+  
+    
+
+        dispatch(agregarSeguimiento({seguimiento,yearSeguimiento,
+            idProyeccionDeEventos,idActividadesDeMejora,fecha1,
+            fecha2,fecha3,fecha4,fecha5,fecha6,fecha7}))
+        
+
+
+    }
+}
+export const agregarSeguimiento = ({idProyeccionDeEventos,idActividadesDeMejora,seguimiento,yearSeguimiento,fecha1,fecha2,fecha3,fecha4,fecha5,fecha6,fecha7}) => {
+    return async(dispatch,getState) => {
+   
+
+        await calidadiesApi.post(`/program/AgregarNotasFechas`,{seguimiento,
+            idProyeccionDeEventos,idActividadesDeMejora,
+            yearSeguimiento,fecha1,fecha2,fecha3,
+            fecha4,fecha5,fecha6,fecha7});
+      
 
     }
 }
@@ -404,10 +498,11 @@ export const obtenerNota = ({idNotas}) => {
 }
 export const actualizarNota = ({titulosDeNotas,bodyDeNotas,idPlanDeMejoramiento,idPrograma,idOportunidadDeMejora,idNotas,idActividadesDeMejora,idProyeccionDeEventos}) => {
     return async(dispatch,getState) => {
-        const start = new Date().getFullYear();
-        const mes = new Date().getMonth();
-        const dia = new Date().getDay();
-    const {data} = await calidadiesApi.post(`/program/actualizarNota`,{titulosDeNotas,start,mes,dia,
+        const fechaActual = new Date();
+        const start = fechaActual.getFullYear();
+        const mes = fechaActual.getMonth() + 1; 
+        const dia = fechaActual.getDate();
+        const {data} = await calidadiesApi.post(`/program/actualizarNota`,{titulosDeNotas,start,mes,dia,
         bodyDeNotas,idPlanDeMejoramiento,idPrograma,idOportunidadDeMejora,idNotas,
         idActividadesDeMejora,idProyeccionDeEventos});
         
@@ -422,30 +517,32 @@ export const borrarNota = ({idNota,idProyeccionDeEventos,idPlanDeMejoramiento,id
     return async(dispatch,getState) => {
         
       const {data} = await calidadiesApi.delete(`/program/borrarNota/${idNota}`);
-      console.log(data);
+  
+
       const {borrarNota} =data;
-      const {start} = borrarNota;
+      const {start,seguimiento,yearSeguimiento} = borrarNota;
     
       dispatch(StartObtenerNotas({idProyeccionDeEventos}));
       dispatch(closeNote());
 
-      dispatch(quitarLaFechaDeLaNota({idPlanDeMejoramiento,year:start,idProyeccionDeEventos,idActividadesDeMejora}))
+      dispatch(quitarLaFechaDeLaNota({idPlanDeMejoramiento,year:start,seguimiento,yearSeguimiento,idProyeccionDeEventos,idActividadesDeMejora,idNota}))
 
     }
 }
-export const uploadFiles = (files,idNota,idPlanDeMejoramiento,idPrograma,idOportunidadDeMejora,idActividadesDeMejora,idProyeccionDeEventos) => {
+export const uploadFiles = (arraysFiles,idNota,idPlanDeMejoramiento,idPrograma,idOportunidadDeMejora,idActividadesDeMejora,idProyeccionDeEventos) => {
     return async(dispatch,getState) => {  
-        for (let i = 0; i < files.length; i++) {
-            const formData = new FormData();
-            formData.append('file',files[i]);
-            const {data} = await calidadiesApi.post(`/program/upload`,formData);
-            const {cloudResp} = data;
+ 
+         for (let i = 0; i < arraysFiles.length; i++) {
+             const formData = new FormData();
+             formData.append('file',arraysFiles[i]);
+             const {data} = await calidadiesApi.post(`/program/upload`,formData);
+             const {cloudResp} = data;
         
 
-            const {data:datos} = await calidadiesApi.post(`/program/saveFiles`,{cloudResp,idNota,idPlanDeMejoramiento,idPrograma,idOportunidadDeMejora,idActividadesDeMejora,idProyeccionDeEventos});
+             const {data:datos} = await calidadiesApi.post(`/program/saveFiles`,{cloudResp,idNota,idPlanDeMejoramiento,idPrograma,idOportunidadDeMejora,idActividadesDeMejora,idProyeccionDeEventos});
            
         }
-        //  const {data} = await calidadiesApi.post(`/program/uploadFiles`,File);
+          const {data} = await calidadiesApi.post(`/program/uploadFiles`,File);
 
     }
 }
@@ -495,9 +592,11 @@ export const borrarFilesDeCloudinary = ({files}) => {
 }
 export const borrarBaseDedatosFiles = (idNotas,files) => {
     return async(dispatch,getState) => {
-        for (let i = 0; i <= files.length; i++) {
+        console.log(files);
+        for (let i = 0; i < files.length; i++) {
             const {data} = await calidadiesApi.post('/program/obtenerFiles',{idNota:idNotas});
             const {obtenerArchivos} = data;
+      
             const {_id} = obtenerArchivos[0];
             await calidadiesApi.post('/program/delete/borrarSubirFiles',{_id});
 
@@ -530,48 +629,49 @@ export const borrarUnoDeLaBaseDeDatosFiles = (idNotas,public_id) => {
 }
 export const obtenerLaFechaDeOportunidadDeMejora = ({idPlanDeMejoramiento,year,idProyeccionDeEventos,idActividadesDeMejora}) => {
     return async(dispatch,getState) => {
-        const {data} = await calidadiesApi.post(`/program/obtenerOportunidadDeMejoraPorId`,{idPlanDeMejoramiento});
-        const {obtenerOportunidadDeMejoraPorId} = data;
-        const {start} = obtenerOportunidadDeMejoraPorId[0]
-        const fecha1 = start
-        const fecha2 = start + 1
-        const fecha3 = start + 2
-        const fecha4 = start + 3
-        const fecha5 = start + 4
-        const fecha6 = start + 5
-        const fecha7 = start + 6
-        const notasFecha1 = 1;
-        const notasFecha2 = 1;
-        const notasFecha3 = 1;
-        const notasFecha4 = 1;
-        const notasFecha5 = 1;
-        const notasFecha6 = 1;
-        const notasFecha7 = 1;
+        // console.log('NO');
+        // const {data} = await calidadiesApi.post(`/program/obtenerOportunidadDeMejoraPorId`,{idPlanDeMejoramiento});
+        // const {obtenerOportunidadDeMejoraPorId} = data;
+        // const {start} = obtenerOportunidadDeMejoraPorId[0]
+        // const fecha1 = start
+        // const fecha2 = start + 1
+        // const fecha3 = start + 2
+        // const fecha4 = start + 3
+        // const fecha5 = start + 4
+        // const fecha6 = start + 5
+        // const fecha7 = start + 6
+        // const notasFecha1 = 1;
+        // const notasFecha2 = 1;
+        // const notasFecha3 = 1;
+        // const notasFecha4 = 1;
+        // const notasFecha5 = 1;
+        // const notasFecha6 = 1;
+        // const notasFecha7 = 1;
 
         
-        const {data:datos} = await calidadiesApi.post(`/program/obtenerProyeccionDeEventos`,{idActividadesDeMejora});
-        const {obtenerProyeccionDeEventos} = datos;
-        console.log(obtenerProyeccionDeEventos);
-        if(year === fecha1){
-            await calidadiesApi.post(`/program/AgregarNotasFechas`,{notasFecha1,idProyeccionDeEventos,idActividadesDeMejora});
-        }else if (year === fecha2){
-            await calidadiesApi.post(`/program/AgregarNotasFechas`,{notasFecha2,idProyeccionDeEventos,idActividadesDeMejora});
-        }else if (year === fecha3){
-            await calidadiesApi.post(`/program/AgregarNotasFechas`,{notasFecha3,idProyeccionDeEventos,idActividadesDeMejora});
-        }else if (year === fecha4){
-             await calidadiesApi.post(`/program/AgregarNotasFechas`,{notasFecha4,idProyeccionDeEventos,idActividadesDeMejora});
-        }else if (year === fecha5){
-            await calidadiesApi.post(`/program/AgregarNotasFechas`,{notasFecha5,idProyeccionDeEventos,idActividadesDeMejora});
-        }else if (year === fecha6){
-           await calidadiesApi.post(`/program/AgregarNotasFechas`,{notasFecha6,idProyeccionDeEventos,idActividadesDeMejora});
-        }else if (year === fecha7){
-            await calidadiesApi.post(`/program/AgregarNotasFechas`,{notasFecha7,idProyeccionDeEventos,idActividadesDeMejora});
-        }
+        // const {data:datos} = await calidadiesApi.post(`/program/obtenerProyeccionDeEventos`,{idActividadesDeMejora});
+        // const {obtenerProyeccionDeEventos} = datos;
+     
+        // if(year === fecha1){
+        //     await calidadiesApi.post(`/program/AgregarNotasFechas`,{notasFecha1,idProyeccionDeEventos,idActividadesDeMejora});
+        // }else if (year === fecha2){
+        //     await calidadiesApi.post(`/program/AgregarNotasFechas`,{notasFecha2,idProyeccionDeEventos,idActividadesDeMejora});
+        // }else if (year === fecha3){
+        //     await calidadiesApi.post(`/program/AgregarNotasFechas`,{notasFecha3,idProyeccionDeEventos,idActividadesDeMejora});
+        // }else if (year === fecha4){
+        //      await calidadiesApi.post(`/program/AgregarNotasFechas`,{notasFecha4,idProyeccionDeEventos,idActividadesDeMejora});
+        // }else if (year === fecha5){
+        //     await calidadiesApi.post(`/program/AgregarNotasFechas`,{notasFecha5,idProyeccionDeEventos,idActividadesDeMejora});
+        // }else if (year === fecha6){
+        //    await calidadiesApi.post(`/program/AgregarNotasFechas`,{notasFecha6,idProyeccionDeEventos,idActividadesDeMejora});
+        // }else if (year === fecha7){
+        //     await calidadiesApi.post(`/program/AgregarNotasFechas`,{notasFecha7,idProyeccionDeEventos,idActividadesDeMejora});
+        // }
       
        
   }
 }
-export const quitarLaFechaDeLaNota = ({idPlanDeMejoramiento,year,idProyeccionDeEventos,idActividadesDeMejora}) => {
+export const quitarLaFechaDeLaNota = ({idPlanDeMejoramiento,year,idProyeccionDeEventos,idActividadesDeMejora,yearSeguimiento,seguimiento,idNota}) => {
     return async(dispatch,getState) => {
     const {data} = await calidadiesApi.post(`/program/obtenerOportunidadDeMejoraPorId`,{idPlanDeMejoramiento});
     const {obtenerOportunidadDeMejoraPorId} = data;
@@ -583,31 +683,38 @@ export const quitarLaFechaDeLaNota = ({idPlanDeMejoramiento,year,idProyeccionDeE
     const fecha5 = start + 4
     const fecha6 = start + 5
     const fecha7 = start + 6
-    const notasFecha1 = 1;
-    const notasFecha2 = 1;
-    const notasFecha3 = 1;
-    const notasFecha4 = 1;
-    const notasFecha5 = 1;
-    const notasFecha6 = 1;
-    const notasFecha7 = 1;
+  
     const {data:datos} = await calidadiesApi.post(`/program/obtenerProyeccionDeEventos`,{idActividadesDeMejora});
     const {obtenerProyeccionDeEventos} = datos;
-    console.log(obtenerProyeccionDeEventos);
-    if(year === fecha1){
-        await calidadiesApi.post(`/program/quitarNotasFechas`,{notasFecha1,idProyeccionDeEventos,idActividadesDeMejora});
-    }else if (year === fecha2){
-        await calidadiesApi.post(`/program/quitarNotasFechas`,{notasFecha2,idProyeccionDeEventos,idActividadesDeMejora});
-    }else if (year === fecha3){
-        await calidadiesApi.post(`/program/quitarNotasFechas`,{notasFecha3,idProyeccionDeEventos,idActividadesDeMejora});
-    }else if (year === fecha4){
-         await calidadiesApi.post(`/program/quitarNotasFechas`,{notasFecha4,idProyeccionDeEventos,idActividadesDeMejora});
-    }else if (year === fecha5){
-        await calidadiesApi.post(`/program/quitarNotasFechas`,{notasFecha5,idProyeccionDeEventos,idActividadesDeMejora});
-    }else if (year === fecha6){
-       await calidadiesApi.post(`/program/quitarNotasFechas`,{notasFecha6,idProyeccionDeEventos,idActividadesDeMejora});
-    }else if (year === fecha7){
-        await calidadiesApi.post(`/program/quitarNotasFechas`,{notasFecha7,idProyeccionDeEventos,idActividadesDeMejora});
-    }
+    const yearSegumientoNumber = parseInt(yearSeguimiento);
+    const SegumientoNumber = parseInt(seguimiento);
+ 
+
+   
+     const {data:quitarNotas} = await calidadiesApi.post(`/program/quitarNotasFechas`,{idProyeccionDeEventos,idActividadesDeMejora,SegumientoNumber,yearSegumientoNumber,idNota});
+    console.log(quitarNotas);
+    
   }
+}
+export const obtenerUnaProyeccionDeEventos = ({idActividadesDeMejora,idProyeccionDeEventos}) => {
+    return async(dispatch,getState) => {
+
+        const {data} = await calidadiesApi.post(`/program/obtenerProyeccionDeEventos`,{idActividadesDeMejora});
+        const {obtenerProyeccionDeEventos} = data;
+    
+        const filtrarProyeccion = obtenerProyeccionDeEventos.filter((proyeccion) => proyeccion._id === idProyeccionDeEventos)
+    
+     
+        dispatch(ProyeccionDeEventos(filtrarProyeccion))
+    }
+}
+export const StartCrearUniversidad = ({nombreDeLaUniversidad}) => {
+    return async(dispatch,getState) => {
+
+    await calidadiesApi.post(`/program/crearUniversidad`,{nombreDeLaUniversidad})
+
+
+
+ }
 }
 

@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { FiltrarUnaOportunidadDeMejora, StartObtenerNotas, filtrarUnaActividadDeOportunidadDeMejora, getProgramasTitle, getProgramasTitleId, obtenerLosFiles, obtenerNota, obtenerOportunidadDeMejoraPorId, obtenerProyeccionDeEventos, vaciarTodosLosFiles } from '../../store/programas/programaThunks';
+import { FiltrarUnaOportunidadDeMejora, StartObtenerNotas, filtrarUnaActividadDeOportunidadDeMejora, getProgramasTitle, getProgramasTitleId, obtenerLosFiles, obtenerNota, obtenerOportunidadDeMejoraPorId, obtenerProyeccionDeEventos, obtenerUnaProyeccionDeEventos, vaciarTodosLosFiles } from '../../store/programas/programaThunks';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { activeNote, chagemodeFalse } from '../../store/programas/planDeMejoramientoSlice';
 
@@ -18,13 +18,13 @@ export const WindowNotes = () => {
     dispatch(obtenerOportunidadDeMejoraPorId({idPlanDeMejoramiento}));
     dispatch(FiltrarUnaOportunidadDeMejora({idPlanDeMejoramiento,idOportunidadDeMejora}))
     dispatch(filtrarUnaActividadDeOportunidadDeMejora({idOportunidadDeMejora,idActividadesDeMejora}))
-    dispatch(obtenerProyeccionDeEventos({idActividadesDeMejora}))
+    // dispatch(obtenerProyeccionDeEventos({idActividadesDeMejora}))
     dispatch(StartObtenerNotas({idProyeccionDeEventos}))
-
+    dispatch(obtenerUnaProyeccionDeEventos({idActividadesDeMejora,idProyeccionDeEventos}))
    
   }, [])
   
-  const {notas} = useSelector(state => state.planDeMejoramiento);
+  const {notas,proyeccionDeEventos} = useSelector(state => state.planDeMejoramiento);
  
   
   const onActive = (idNotas) => {
@@ -58,6 +58,8 @@ export const WindowNotes = () => {
       }  
     
     </ul>
+    
+   
     </div> 
   </div>
   )

@@ -30,7 +30,7 @@ export const SetActive = () => {
     dispatch(actualizarNota({titulosDeNotas,bodyDeNotas,idPlanDeMejoramiento,idPrograma,idOportunidadDeMejora,
       idNotas:setNote._id,idActividadesDeMejora,idProyeccionDeEventos}))
     if (arraysFiles.length > 0) {
-      console.log(setNote);
+ 
       dispatch(actualizarFiles({files:arraysFiles,idNota:setNote._id,idPlanDeMejoramiento,idPrograma,idOportunidadDeMejora,idActividadesDeMejora,idProyeccionDeEventos}))
     }
     Swal.fire('La nota se ha Actualizado con exito',errorMessage,'success')
@@ -42,6 +42,7 @@ export const SetActive = () => {
     dispatch(borrarFilesDeCloudinary({files}))
     const {_id} = setNote
     const idNotas = _id;
+
     dispatch(borrarBaseDedatosFiles(idNotas,files))
     Swal.fire('La nota se ha borrado con exito',errorMessage,'success')
   }

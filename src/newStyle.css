@@ -191,6 +191,10 @@
     position: relative;
     left: 164px;
 }
+.botonesDelModalProyeccion{
+    position: relative;
+
+}
 .justificarTexto{
     text-align: justify;
 }
@@ -212,7 +216,10 @@
 .inputCodigo{
     width: 50px;
 }
+.botonesDeProyeccionDeEventos{
+    margin-left: 28%;
 
+}
 
 
 @media (min-width: 280px) {

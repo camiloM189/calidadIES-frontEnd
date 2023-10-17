@@ -22,7 +22,8 @@ export const oportunidadDeMejoraSlice = createSlice({
         actividadesDeMejora:[],
         idActividades:0,
         borrarOportunidadDeMejora:false,
-        borrarOportunidadDeMejoraId:0
+        borrarOportunidadDeMejoraId:0,
+        agregarSeguimiento:false
     },
     reducers:{
        getTituloDeOportunidadDeMejora:(state,{payload}) => {
@@ -99,7 +100,12 @@ export const oportunidadDeMejoraSlice = createSlice({
         },
         changeFalseborrarOportunidadDeMejora:(state,{payload}) => {
             state.borrarOportunidadDeMejora = false
-
+        },
+        changeSeguimiento:(state,{payload}) => {
+            state.agregarSeguimiento = true;
+        },
+        onchangeSeguimiento:(state,{payload}) => {
+            state.agregarSeguimiento = false;
         }
         
     }
@@ -111,6 +117,8 @@ export const {
     getTituloDeOportunidadDeMejora,getActividadesDeMejora,getInidicador,getFecha,getFecha2,getFecha3,getFecha4,getFecha5,
 getFecha6,getFecha7,ActiveActividadesDeMejora,getTituloDeActividadesDeMejora,falseActividadesDeMejora,ActiveProyeccionDeEventos,
 falseProyeccionDeEventos,IdOportunidadDeMejora,getYear,IdActividadesDeMejora,vaciarIdOportunidadDeMejora,
-pushactividadesDeMejora,getidActividades,vaciarActividadeDeMejora,changeborrarOportunidadDeMejora,changeFalseborrarOportunidadDeMejora
+pushactividadesDeMejora,getidActividades,vaciarActividadeDeMejora,changeborrarOportunidadDeMejora,changeFalseborrarOportunidadDeMejora,
+changeSeguimiento,onchangeSeguimiento
+
 } = oportunidadDeMejoraSlice.actions;
 

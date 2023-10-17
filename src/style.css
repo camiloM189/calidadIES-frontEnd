@@ -912,8 +912,9 @@ th, td{
     .imagenArchivo2 {
         position: absolute;
         left: 24%;
-        top: 40%;
+        top: 63%;
         width: 72%;
+    
     }
 }
 /* // Large devices (desktops, 992px and up) */
@@ -953,7 +954,7 @@ th, td{
     .imagenArchivo2 {
         position: absolute;
         left: 25%;
-        top: 30%;
+        top: 63%;
         width: 72%;
     
     }

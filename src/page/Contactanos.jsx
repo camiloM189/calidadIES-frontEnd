@@ -22,7 +22,7 @@ export const Contactanos = () => {
     <div className='container animate__animated animate__backInDown'>
         <article class="text-center mb-3">
           <h1>¿Interesado?</h1>
-          <p class="fs-5">Para más información, puedes contactarme en <a href="#">calidadies2023@gmail.com</a> </p>
+          <p class="fs-5">Para más información, puedes contactarnos en <a href="#">calidadies2023@gmail.com</a> </p>
         </article>
         <article class="">
           <form onSubmit={EnviarComentario}>
