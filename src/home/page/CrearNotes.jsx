@@ -53,8 +53,8 @@ export const CrearNotes = () => {
   }
   const fileData = (event) => {
     const file = event.target.files[0];
-    console.log(event.target.files[0]);
-    setArraysFiles([...arraysFiles,file])
+   
+    setArraysFiles([...arraysFiles,file]);
     // dispatch(startUpdateFiles({file}));
   }
 

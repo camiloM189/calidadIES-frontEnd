@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
-import { obtenerTodosLosUsuarios } from '../../../store/programas/programaThunks';
+import { obtenerTodosLosUsuarios, startBorrarUsuarios } from '../../../store/programas/programaThunks';
 
 export const VerUsuarios = () => {
 
@@ -14,8 +14,14 @@ export const VerUsuarios = () => {
  
     }, [])
 
+    const borrarUsuario = (_id) => {
+
+      dispatch(startBorrarUsuarios({_id}))
+    }
+
     
     const {Usuarios} = useSelector(state => state.universidadesSlice);
+
 
 
   return (
@@ -29,6 +35,7 @@ export const VerUsuarios = () => {
   <th>Correo</th>
   <th>Universidad</th>
   <th>Codigo de la Universidad</th>
+  <th></th>
   
   
   </tr>
@@ -41,7 +48,9 @@ export const VerUsuarios = () => {
        <th className='bg-success text-light'>{event.email}</th>
        <th className='bg-success text-light'>{event.nombreDeLaUniversidad}</th>
        <th className='bg-success text-light'>{event.idUniversidad}</th>
-    
+       <th className={`bg-danger text-light`}><button className={`
+             botonCuadroItem  bg-danger text-light`} onClick={() => borrarUsuario(event._id)}>Borrar</button></th>
+
        </tr>
      ))
     }  

@@ -7,6 +7,18 @@ import { getAspectosCurriculares, getDenominacion, getInfraestructuraFísica, ge
 import {ObtenerTitulosDeActividadesDeOportunidadDeMejora, ProyeccionDeEventos, agragarOportunidadDeMejora, crearPoryeccionDeEventos, crearProgramas, createPlanDeMejoramiento, filtradoUnaOportunidadDeMejora, filtrarActividadDeMejora, filtrarActividades, getOportunidadDeMejoras, getPlanDeMejoramiento, getProgramas, getProgramasFiltrado, nombreDeLaActividadDeMejoramiento, seleccionarCondicionesDeCalidad,OnObtenerNotas, setNoteActive, closeNote, obtenerFiles, vaciarFiles, vaciarActividadesDeMejoramiento } from "./planDeMejoramientoSlice";
 
 
+
+
+export const startBorrarUsuarios = ({_id}) => {
+    return async(dispatch,getState) => {
+       
+         await calidadiesApi.post(`/program/borrarUsuarios`,{_id});
+
+        dispatch(obtenerTodosLosUsuarios())
+
+
+    }
+}
 export const obtenerTodosLosUsuarios = () => {
     return async(dispatch,getState) => {
        
@@ -439,10 +451,28 @@ export const crearNotas = ({titulosDeNotas,arraysFiles,bodyDeNotas,idPlanDeMejor
     let idNota = crearNota._id;
   
 
-     if(arraysFiles.length > 0){
-       
-         dispatch(uploadFiles(arraysFiles,idNota,idPlanDeMejoramiento,idPrograma,idOportunidadDeMejora,idActividadesDeMejora,idProyeccionDeEventos))
-     }
+   if(arraysFiles.length > 0){
+   for (let i = 0; i < arraysFiles.length; i++) {
+        console.log(arraysFiles.length);
+
+        
+        
+         dispatch(uploadFiles(arraysFiles[i],idNota,idPlanDeMejoramiento,idPrograma,idOportunidadDeMejora,idActividadesDeMejora,idProyeccionDeEventos));
+
+
+
+   }
+ }
+
+
+
+
+    //  if(arraysFiles.length > 0){
+
+    //      dispatch(uploadFiles(arraysFiles,idNota,idPlanDeMejoramiento,idPrograma,idOportunidadDeMejora,idActividadesDeMejora,idProyeccionDeEventos));
+    //  }
+
+
      dispatch(StartObtenerNotas({idProyeccionDeEventos}));
     //  dispatch(obtenerLaFechaDeOportunidadDeMejora({idPlanDeMejoramiento,year,idProyeccionDeEventos,idActividadesDeMejora}))
      dispatch(obtenerOportunidadDeMejoraPorIdAgregarSeguimiento({idPlanDeMejoramiento,year,start,idProyeccionDeEventos,idActividadesDeMejora,seguimiento,yearSeguimiento}))
@@ -531,18 +561,25 @@ export const borrarNota = ({idNota,idProyeccionDeEventos,idPlanDeMejoramiento,id
 }
 export const uploadFiles = (arraysFiles,idNota,idPlanDeMejoramiento,idPrograma,idOportunidadDeMejora,idActividadesDeMejora,idProyeccionDeEventos) => {
     return async(dispatch,getState) => {  
- 
-         for (let i = 0; i < arraysFiles.length; i++) {
-             const formData = new FormData();
-             formData.append('file',arraysFiles[i]);
-             const {data} = await calidadiesApi.post(`/program/upload`,formData);
-             const {cloudResp} = data;
+        console.log(arraysFiles);
+         const formData = new FormData();
+         formData.append('file',arraysFiles);
+         const {data} = await calidadiesApi.post(`/program/upload`,formData);
+         const {cloudResp} = data;
+         await calidadiesApi.post(`/program/saveFiles`,{cloudResp,idNota,idPlanDeMejoramiento,idPrograma,idOportunidadDeMejora,idActividadesDeMejora,idProyeccionDeEventos});
+        //  for (let i = 0; i < arraysFiles.length; i++) {
+        //      const formData = new FormData();
+        //      formData.append('file',arraysFiles[i]);
+
+        //     const {data} = await calidadiesApi.post(`/program/upload`,formData);
+
+        //       const {cloudResp} = data;
         
 
-             const {data:datos} = await calidadiesApi.post(`/program/saveFiles`,{cloudResp,idNota,idPlanDeMejoramiento,idPrograma,idOportunidadDeMejora,idActividadesDeMejora,idProyeccionDeEventos});
+        //     const {data:datos} = await calidadiesApi.post(`/program/saveFiles`,{cloudResp,idNota,idPlanDeMejoramiento,idPrograma,idOportunidadDeMejora,idActividadesDeMejora,idProyeccionDeEventos});
            
-        }
-          const {data} = await calidadiesApi.post(`/program/uploadFiles`,File);
+        //  }
+        //    const {data} = await calidadiesApi.post(`/program/uploadFiles`,File);
 
     }
 }
