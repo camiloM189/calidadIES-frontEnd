@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from '../../hook/useForm'
 import { useDispatch, useSelector } from 'react-redux'
 import { starLoginWithEmailAndPassword } from '../../store/auth/authThunks'
@@ -21,7 +21,11 @@ export const LoginPage = () => {
 		
 		 dispatch(starLoginWithEmailAndPassword({email,password}));
 	}
+	const [showPassword, setShowPassword] = useState(false);
 
+	const togglePasswordVisibility = () => {
+	  setShowPassword(!showPassword);
+	};
 	useEffect(() => {
 	  if(errorMessage !== undefined){
          Swal.fire('Error en la autenticacion',errorMessage,'error')
@@ -29,7 +33,7 @@ export const LoginPage = () => {
 	
 	  
 	}, [errorMessage])
-	
+
   return (
     
 
@@ -47,15 +51,24 @@ export const LoginPage = () => {
 				   
 				   />
 				</div>
-				<div className="form-group">
-			     <input type="password" className="form-control mb-4 input-text" 
-				 id="password" 
-				 placeholder="Password"
-				 value={password}
-				 name='password'
-				 onChange={onInputChange}
+			
+  
+  
+				<div className="form-group input-group">
+			     <input  type={showPassword ? 'text' : 'password'}
+                className="form-control mb-4 input-text"
+                id="password"
+                placeholder="Password"
+                value={password}
+                name="password"
+                onChange={onInputChange}
 				 
 				 />
+				  
+				<i className={`bi bi-eye-fill input-group-text eyeInput ${(showPassword) ? 'd-none' : ''}`} onClick={togglePasswordVisibility}></i>
+
+				<i className={`bi bi-eye-slash-fill input-group-text eyeInput ${(showPassword) ? '' : 'd-none'}`}  onClick={togglePasswordVisibility}></i>
+
 				</div>
             	{/* <a href="/register" >Crear una cuenta</a> */}
 				<button type="submit" className="btn btn-primary botton-login">Login</button>

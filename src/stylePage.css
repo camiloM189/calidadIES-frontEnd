@@ -243,6 +243,21 @@ background-position: center;
 
 /* // XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) { 
-   
+    .imgLogo{
+        width: 10%;
+        margin-bottom: 0% !important;
+        position: absolute;
+        top: -43px;
     
+    }
+    
+    }
+
+ @media ( min-width:1920px){
+        .imgLogo {
+            width: 9%;
+            margin-bottom: 0% !important;
+            position: absolute;
+            top: -43px;
+        }
     }

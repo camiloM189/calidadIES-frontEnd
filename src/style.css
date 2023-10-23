@@ -352,6 +352,11 @@ ul{
     width: 10rem;
 
 }
+.eyeInput{
+    
+        height: 55px;
+    
+}
 .setImgUrl{
     width: 10rem !important;
     right: -26% !important;
