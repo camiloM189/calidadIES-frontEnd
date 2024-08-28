@@ -1,0 +1,445 @@
+.programasTitulos{
+    width: 80%;
+    height: 40px;
+    background-color: rgb(238, 190, 128);
+    position: relative;
+    margin: 0px auto;
+    align-items: center;
+    left: 10%;
+    border: 0px;
+}
+.tituloDeProgramas:hover{
+    transition: 0.2;
+    background-color:  rgb(160, 140, 115);
+
+}
+.tituloDeProgramas{
+    top: 8px;
+    position: relative;
+}
+.tituloDeProgramasEdit{
+    top: 8px;
+    position: relative;
+}
+
+.botonRegresar{
+    margin-top: 50px;
+    bottom: 4%;
+    position: fixed;
+    right: 85%;
+    
+}
+.editButtonNew{
+    position: relative;
+    left: 754px;
+}
+.espacio{
+    width: 100%;
+    height: 100vh;
+}
+.borrar-files-icon:hover{
+    background-color: rgb(247, 245, 245);
+
+
+}
+.borrar-files-icon{
+    position: relative;
+    top: -62px;
+    left: 110px;
+    
+}
+.cuadrado-icon{
+    width: 20px;
+    height: 20px;
+
+}
+.editar-files{
+    position: relative;
+    right: -89%;
+    /* top: 99%; */
+    bottom: -330px;
+}
+.borrarProyeccion{
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    color: inherit;
+    text-decoration: none;
+}
+.borrarTodo{
+    
+
+        /* bottom: 80%; */
+    /* right: 12%; */
+    /* height: 52px; */
+    position: fixed;
+    border-radius: 11px;
+    /* margin-bottom: 0px; */
+    position: relative;
+    margin-top: 24px;
+    float: right;
+    /* margin-left: 16px; */
+    /* margin-right: 118px; */
+
+}
+.botonEditProgramas{
+    top: 5px;
+    position: relative;
+    left: 90%;
+}
+.borrarPorgrama{
+    position: relative;
+    top: -33px;
+    left: 369px;
+}
+.borrarPorgrama:hover{
+    color:black !important
+}
+.BorrarFilePdf{
+    position: relative;
+    top: -45px;
+    left: -18px;
+
+}
+.botonboton{
+    border: none;
+    background: none;
+ 
+}
+.borrarOportunidadDeMejora{
+    top: -26px!important;
+    left: 92%!important;
+}
+.start-100 {
+    left: 94%!important;
+}
+/* .custom-icon{
+    position: absolute;
+    margin-left: auto;
+} */
+.bottom-50 {
+    top: -20px!important;
+}
+.bottom-0{
+    top: -26px!important;
+}
+.img-arreglando{
+    max-width: 100% !important;
+    /* height: auto !important;
+    margin-bottom: 10%; */
+}
+.botonItem{
+    width: 98%;
+    border: 20px;
+    background-color: #dc3545;
+    color: white;
+    transition-delay: 0.1s;
+}
+.borrarActividadesNueva{
+    top: -30px !important;
+
+}
+.iconopdf{
+    width: 74%;
+    height: 54%;
+    max-width: 80%;
+    color: #dc3545;
+}
+.iconopdf:hover{
+    background-color: rgb(167, 167, 167);
+   
+   
+}
+
+.modal-oportunidadDeMejora {
+   
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+
+.modal-content2 {
+    background: #fff;
+    border-radius: 5px;
+    max-width: 80%;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    
+}
+
+.close-modal2 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.botonesDelModal{
+    position: relative;
+    left: 164px;
+}
+.botonesDelModalProyeccion{
+    position: relative;
+
+}
+.justificarTexto{
+    text-align: justify;
+}
+
+.tituloDeNotas{
+    margin-left: 0%;
+}
+
+.center-text {
+    margin-top: 10%;
+    color: black !important;
+  
+}
+.imgHomePage{
+    max-width: 100% !important;
+    height: auto !important;
+    margin-bottom: 10%;
+}
+.inputCodigo{
+    width: 50px;
+}
+.botonesDeProyeccionDeEventos{
+    margin-left: 28%;
+
+}
+
+
+@media (min-width: 280px) {
+    .img-arreglando{
+        max-width: 85% !important;
+        height: auto !important;
+        margin-bottom: 10%;
+    }
+    .botonesDelModal {
+        position: relative;
+        left: 13px;
+    }
+    .iconopdf{
+        width: 40%;
+        height: 54%;
+        max-width: 80%;
+        color: #dc3545;
+    }
+    .editar-files {
+        position: relative;
+        right: -69%;
+        /* top: 99%; */
+        bottom: -344px;
+    }
+    .tituloDeNotas {
+        margin-left: 45%;
+    }
+    .center-text {
+        margin-top: 10%;
+        color: black !important;
+        margin-left: 44px;
+    }
+    .botonRegresarPrograma {
+        margin-top: 50px;
+        bottom: 4%;
+        position: fixed;
+        right: 86%;
+    }
+    .BorrarFilePdf {
+        position: relative;
+        top: -24px;
+        left: -3px;
+    }
+}
+
+@media (min-width: 360px) {
+    .img-arreglando{
+        max-width: 89% !important;
+        height: auto !important;
+        margin-bottom: 10%;
+    }
+    .botonesDelModal{
+        position: relative;
+        left: 58px;
+   
+    }
+    .editar-files {
+        position: relative;
+        right: -76%;
+        /* top: 99%; */
+        bottom: -330px;
+    }
+    .tituloDeNotas {
+        margin-left: 21%;
+    }
+    .center-text {
+        margin-top: 10%;
+        color: black !important;
+        margin-left: 11%;
+    }
+    .BorrarFilePdf {
+        position: relative;
+        top: -24px;
+        left: -3px;
+    }
+}
+
+@media (min-width: 375px) {
+    .img-arreglando{
+        max-width: 89% !important;
+        height: auto !important;
+        margin-bottom: 10%;
+    }
+    .botonesDelModal{
+        position: relative;
+        left: 58px;
+   
+    }
+    .editar-files {
+        position: relative;
+        right: -77%;
+        /* top: 99%; */
+        bottom: -330px;
+    }
+    .tituloDeNotas{
+        margin-left: 24%;
+    }
+    .center-text {
+        margin-top: 10%;
+        color: black !important;
+        margin-left: 11%;
+    }
+    .BorrarFilePdf {
+        position: relative;
+        top: -24px;
+        left: -3px;
+    }
+}
+
+@media (min-width: 412px) {
+    .botonesDelModal {
+        position: relative;
+        left: 19px;
+    }
+    .BorrarFilePdf {
+        position: relative;
+        top: -24px;
+        left: -3px;
+    }
+}
+@media (min-width:540px){
+    .botonesDelModal {
+        position: relative;
+        left: 120px;
+    }
+    .BorrarFilePdf {
+        position: relative;
+        top: -25px;
+        left: 0px;
+    }
+   
+}
+@media (min-width: 556px){
+    .botonesDelModal{
+        position: relative;
+        left: 144px;
+    }
+    .BorrarFilePdf {
+        position: relative;
+        top: -25px;
+        left: -2px;
+    }
+}
+@media (min-width: 576px) {
+    .BorrarFilePdf {
+        position: relative;
+        top: -25px;
+        left: 0px;
+    }
+   
+}
+
+@media (min-width: 768px) { 
+    .BorrarFilePdf {
+        position: relative;
+        top: -24px;
+        left: 1px;
+    }
+}
+
+@media (min-width:912px){
+    .BorrarFilePdf {
+        position: relative;
+        top: -24px;
+        left: -1px;
+    }
+}
+@media (min-width: 992px) { 
+    .BorrarFilePdf {
+        position: relative;
+        top: -23px;
+        left: -6px;
+    }
+}
+@media (min-width:1024px){
+    .img-arreglando{
+        max-width: 99% !important;
+        /* height: auto !important;
+        margin-bottom: 10%; */
+    }
+    .tituloDeNotas{
+        margin-left: 0%;
+    }
+    .iconopdf {
+        width: 58%;
+        height: 54%;
+        max-width: 80%;
+        color: #dc3545;
+    }
+    .editar-files {
+        position: relative;
+        right: -92%;
+        /* top: 99%; */
+        bottom: -330px;
+    }
+    .center-text {
+        margin-top: 10%;
+        color: black !important;
+      
+    }
+    .BorrarFilePdf {
+        position: relative;
+        top: -38px;
+        left: 5px;
+    }
+}
+
+@media (min-width: 1200px) {
+    /* .imagenArchivo {
+        position: absolute;
+        left: 25%;
+        top: 50%;
+        width: 74%;
+    } */
+}
+@media (min-width: 1280px){
+   
+}
+
+@media (min-width: 1400px) { 
+  
+   
+   }

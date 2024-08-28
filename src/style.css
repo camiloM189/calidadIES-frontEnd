@@ -1,0 +1,1103 @@
+body{
+    background-color: rgb(224, 224, 224);
+}
+.cuadros{
+    display: inline-block;
+    width: 32%;
+    height: 60px;
+    background-color: #0057FF;
+    color: white;
+   border-radius: 30px;
+}
+.cuadros:hover{
+    background-color: #4e88fc;
+    transition: color 0.3s;
+}
+.total-cuadros{
+    margin-top: 7.5rem!important;
+}
+.p1{
+    padding-top: 2px;
+
+}
+a{
+    text-decoration: none;
+}
+.login-center{
+    min-height:100vh
+
+
+}
+.text-register{
+    margin-left: 70px;
+
+
+}
+.input-text{
+    height: 3.4375em;
+    width: 100%;
+}
+.botton-login{
+    padding: 5px 100px 5px 100px;
+
+}
+.register-page{
+    /* margin: 20px 120px 20px 20px; */
+    margin: 20px 0px 0px 40px;
+}
+.contenedor2{
+    width: 560px;
+    height: 50px;
+    border-radius: 40px;
+}
+.contenedor2:hover{
+    color: white;
+    background-color: rgb(1, 30, 72)
+}
+.window{
+    height: 100vh;
+    width: 26%;
+    position: absolute;
+    /* background-color: #ffffff; */
+    border: 2px solid rgb(36, 36, 36)
+}
+.cuadrado{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.cuadrado2{
+    height: 100%;
+    width: 74%;
+    position: absolute;
+    margin-left: 26%;
+}
+.modal-list{
+    width: 74%;
+    height: 100%;
+    position: absolute;
+    margin-left: 26%;
+}
+.agregar{
+
+    width: 65px;
+    margin-top: 3%
+
+}
+.boton-guardar{
+    margin-top: 50px;
+    bottom: 4%;
+    position: fixed;
+    right: 2%;
+
+}
+.add-list{
+    display: none;
+}
+.list-button{
+    text-decoration: none;
+    color: black;
+}
+.titulo{
+    width: 100%;
+    height: 40px;
+    background-color: #ABC1D1;
+    margin-top: 20px;
+}
+/* .titulo-de{
+    display: inline-block;
+    background-color: #4e88fc;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 7px;
+    margin-top: 14px;
+} */
+.window-title{
+    display: inline-block;
+    background-color: #abc1d1;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 14px;
+    margin-top: 14px;
+}
+.lista-mejoramiento:hover{
+    background-color: rgb(122, 120, 120);
+ 
+}
+.no-plan{
+    width: 74%;
+    height: 600%;
+    background-color: #ABC1D1;
+    margin-left: 26%;
+    position: absolute;
+
+}
+.center-text{
+    margin-top: 10%;
+    color: black !important;
+}
+.boton-posicion{
+    /* margin-top: 50px;
+    bottom: 4%;
+    position: fixed;
+    right: 2%;
+    width: 50px;
+    height: 50px;
+   border-radius: 10px; */
+   margin-top: 50px;
+   bottom: 4%;
+   position: fixed;
+   right: 5%;
+   width: 50px;
+   height: 50px;
+   border-radius: 10px;
+}
+.boton-regresar{
+    margin-top: 50px;
+    bottom: 4%;
+    position: fixed;
+   
+}
+.boton-back{
+    /* margin-top: 50px;
+    bottom: 3%;
+    position: fixed;
+    left: 30%;
+    width: 70px;
+    height: 42px;
+    border-radius: 11px; */
+    margin-top: 50px;
+    bottom: 4%;
+    position: fixed;
+    left: 5%;
+    width: 70px;
+    height: 42px;
+    border-radius: 11px;
+}
+.boton-regresar-notes{
+    margin-top: 50px;
+    bottom: 4%;
+    position: fixed;
+    left: 30%;
+    width: 70px;
+    height: 42px;
+    border-radius: 11px;
+}
+.boton-back-evento{
+    margin-top: 50px;
+    bottom: 3%;
+    position: fixed;
+    left: 2%;
+    width: 70px;
+    height: 42px;
+    border-radius: 11px;
+}
+.fileInputLabel {
+    display: inline-block;
+    font-size: 25px;
+    position: relative;
+    left: 10px;
+}
+.uploadFile {
+    display: none;
+  }
+.listas-cuadrado{
+    width: 96%;
+    border-radius: 2px !important;
+    height: 100%;
+    background-color: #FBAD4B;
+    left: 0px;
+    position: relative;
+
+}
+.listas-cuadrado2{
+    width: 96%;
+    border-radius: 2px !important;
+    height: 100%;
+  
+    left: 0px;
+    position: relative;
+
+}
+.listas-cuadrado:hover{
+    background-color: #f3c58d;
+    transition: 0.2s;
+}
+.editButton{
+    margin-right:0px;
+}
+
+ul{
+    list-style: none;
+    padding-left: 0rem;
+}
+.botonEditTitleItem{
+    width: 98%;
+    border: 20px;
+    background-color: #dc3545;
+    color: white;
+    transition-delay: 0.1s;
+
+}
+.botonTitleItem{
+    width: 98%;
+    border: 20px;
+    background-color: #dc3545;
+    color: white;
+    transition-delay: 0.1s;
+}
+.botonTitleItem:hover{
+    background-color: rgb(31, 27, 27);
+    color: white;
+    transition: 0.2s;
+}
+.modalBorrar{
+    bottom: 50%;
+}
+.cuadradoItem{
+    width: 11%; 
+}
+.botonCuadroItem{
+    border: none;
+    outline: none;
+    width: 100%; 
+}
+.windowNotes{
+      
+       width: 74%;
+       height: 100vh;
+       margin-left: 26%;
+       position: absolute;
+}
+.boton-regresar-update{
+    margin-top: 50px;
+    bottom: 4%;
+    position: fixed;
+    left: 2%;
+    width: 70px;
+    height: 42px;
+    border-radius: 11px;
+}
+.botonesAyer{
+    display: flex;
+  justify-content: center;
+}
+.noNote{
+    /* background-color: #ffffff; */
+    width: 75%;
+    height: 100vh;
+    margin-left: 25%;
+    position: absolute;
+    
+}
+.botonUpdate-file{
+    display: inline-block;
+    font-size: 25px;
+    position: relative;
+   
+}
+.boton-borrar-item{
+    margin-top: 50px;
+    bottom: 3%;
+    position: fixed;
+    right: 2%;
+    height: 42px;
+    border-radius: 11px;
+    
+}
+.boton-borrar-metas{
+    margin-top: 24px; 
+    position: fixed;
+    right: 2%;
+    height: 43px;
+    border-radius: 11px;
+    top: 10%;
+}
+.subirArchivos{
+    right: -28%;
+    position: relative;
+    /* top: 322px; */
+    width: 46px;
+    top: 238px;
+}
+.subirArchivos2{
+    right: -28%;
+    position: relative;
+    /* top: 322px; */
+    width: 46px;
+    top: 283px;
+
+}
+
+.cuadro-file{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+.file-cuadrado{
+    overflow: hidden;
+    width: 173px;
+}
+.journal-icon{
+    position: relative;
+    left: -88px;
+    font-size: 22px;
+}
+.texto-url{
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis;
+}
+.listaDeImagenes{
+    width: 10rem;
+
+}
+.eyeInput{
+    
+        height: 55px;
+    
+}
+.setImgUrl{
+    width: 10rem !important;
+    right: -26% !important;
+    position: relative !important;
+    top: 320px !important;
+
+}
+.style{
+    width: 16rem;
+    height: 10rem;
+
+}
+.descargaFile{
+    width:100%;
+}
+.imagenArchivo {
+    /* width: 100px; */
+    /* height: auto; */
+    position: absolute;
+    left: 25%;
+    top: 47%;
+}
+
+.imageItem{
+    max-width: 15%;
+    height: auto;
+}
+.img-fluid{
+    max-width: 80% !important;
+    height: auto !important;
+    margin-bottom: 10%;
+}
+.editComponent{
+    right: -27%;
+    position: relative;
+    top: 330px;
+    width: 47px;
+}
+.editatMetas{
+    bottom: 82%;
+    position: fixed;
+    right: 2%;
+    height: 42px;
+    border-radius: 11px;
+}
+.tabla-margin{
+    margin-top: 6rem !important;
+}
+th, td{
+    border:2px black solid ;
+}
+.completado{
+    background-color: #49d468;
+}
+.cuadrado-oportunidades{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(224, 224, 224);
+    position: relative;
+    margin: 0 auto;
+    margin-top: 70px;
+    margin-bottom: 22px;
+    
+}
+.texto-oportunidades{
+    position: relative;
+    top: 6px;
+}
+.titulo-intento1{
+    width: 100%;
+    height: 50px;
+    background-color:rgb(224, 224, 224);
+}
+.cuadro-oportunidades{
+    width: 80%;
+    height: 75vh;
+    margin: 0 auto;
+    
+}
+.editatMetas{
+    bottom: 80%;
+    right: 12%;
+    height: 42px;
+    position: fixed; 
+    border-radius: 11px;
+    margin-bottom: 0px;
+    position: static;
+    margin-top: 24px;
+    float: right;
+    margin-left: 16px;
+    margin-right: 118px;
+} 
+.boton-next{
+    background-color: #7c7d80 !important;
+}
+.custom-table.table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-accent-bg: initial;
+}
+.borrar-files{
+    margin-top: 67px;
+    bottom: 86%;
+    position: fixed;
+    left: 30%;
+    width: 70px;
+    height: 42px;
+    border-radius: 11px;
+
+}
+.pdf-icon {
+    width: 47%;
+    height: 54%;
+    max-width: 80%;
+    color: #dc3545;
+}
+.imagenArchivo {
+    position: absolute;
+    left: 25%;
+    top: 60%;
+    width: 72%;
+}
+.imagenArchivo2 {
+    position: absolute;
+    left: 16%;
+    top: 63%;
+    width: 72%;
+
+}
+
+
+
+@media (min-width: 280px) {
+    .contenedor2{
+        width: 225px;
+        height: 80px;
+    }
+    /* .editatMetas {
+        bottom: 80%;
+        position: fixed;
+        right: 4%;
+        height: 42px;
+        border-radius: 11px;
+    } */
+    .editatMetas{
+        bottom: 80%;
+        right: 12%;
+        height: 42px;
+        position: fixed;
+        border-radius: 11px;
+        margin-bottom: 0px;
+        position: static;
+        margin-top: 24px;
+        float: right;
+        margin-left: 16px;
+        margin-right: 11px;
+    } 
+    .cuadros{
+        display: inline-block;
+        width: 93%;
+        height: 89px;
+        background-color: #0057FF;
+        color: white;
+        border-radius: 30px;
+        margin-bottom: 40px;
+    }
+    .total-cuadros{
+        margin-top: 1.5rem!important;
+    }
+    .pdf-icon {
+        width: 47%;
+        height: 54%;
+        max-width: 80%;
+        color: #dc3545;
+    }
+    .imagenArchivo {
+        position: absolute;
+        left: 25%;
+        top: 60%;
+        width: 72%;
+    }
+    .imagenArchivo2 {
+        position: absolute;
+        left: 16%;
+        top: 63%;
+        width: 72%;
+    
+    }
+    
+}
+@media (min-width: 360px) {
+    .contenedor2{
+        width: 310px;
+        height: 60px;
+     
+    }
+    .editatMetas{
+        bottom: 80%;
+        right: 12%;
+        height: 42px;
+        position: fixed;
+        border-radius: 11px;
+        margin-bottom: 0px;
+        position: static;
+        margin-top: 24px;
+        float: right;
+        margin-left: 16px;
+        margin-right: 13px;
+    } 
+    /* .editatMetas {
+        bottom: 85%;
+        position: fixed;
+        right: 3%;
+        height: 42px;
+        border-radius: 11px;
+    } */
+    .cuadros{
+        display: inline-block;
+        width: 47%;
+        height: 122px;
+        background-color: #0057FF;
+        color: white;
+        border-radius: 30px;
+        margin-bottom: 40px;
+    }
+    .total-cuadros{
+        margin-top: 1.5rem!important;
+    }
+    .pdf-icon {
+        width: 47%;
+        height: 54%;
+        max-width: 80%;
+        color: #dc3545;
+    }
+    .imagenArchivo {
+        position: absolute;
+        left: 27%;
+        top: 60%;
+        width: 72%;
+    }
+    .imagenArchivo2 {
+        position: absolute;
+        left: 25%;
+        top: 63%;
+        width: 72%;
+    
+    }
+}
+
+@media (min-width: 375px) {
+    .contenedor2{
+        width: 310px;
+        height: 60px;
+    }
+    /* .editatMetas {
+        bottom: 84%;
+        position: fixed;
+        right: 3%;
+        height: 42px;
+        border-radius: 11px;
+    } */
+    .cuadros{
+        display: inline-block;
+        width: 47%;
+        height: 122px;
+        background-color: #0057FF;
+        color: white;
+        border-radius: 30px;
+        margin-bottom: 40px;
+    }
+    .total-cuadros{
+        margin-top: 1.5rem!important;
+    }
+    .editatMetas{
+        bottom: 80%;
+        right: 12%;
+        height: 42px;
+        position: fixed;
+        border-radius: 11px;
+        margin-bottom: 0px;
+        position: static;
+        margin-top: 24px;
+        float: right;
+        margin-left: 16px;
+        margin-right: 14px;
+    } 
+    .pdf-icon {
+        width: 47%;
+        height: 54%;
+        max-width: 80%;
+        color: #dc3545;
+    }
+    .imagenArchivo {
+        position: absolute;
+        left: 25%;
+        top: 60%;
+        width: 72%;
+    }
+    .imagenArchivo2 {
+        position: absolute;
+        left: 16%;
+        top: 63%;
+        width: 72%;
+    
+    }
+}
+@media (min-width: 390px) {
+    
+    .pdf-icon {
+        width: 47%;
+        height: 54%;
+        max-width: 80%;
+        color: #dc3545;
+    }
+    .imagenArchivo {
+        position: absolute;
+        left: 27%;
+        top: 60%;
+        width: 72%;
+    }
+    .imagenArchivo2 {
+        position: absolute;
+        left: 25%;
+        top: 46%;
+        width: 72%;
+    }
+
+}
+@media (min-width: 412px) {
+    .contenedor2{
+        width: 350px;
+        height: 60px;
+     
+    }
+   
+    .editatMetas{
+        bottom: 80%;
+        right: 12%;
+        height: 42px;
+        position: fixed;
+        border-radius: 11px;
+        margin-bottom: 0px;
+        position: static;
+        margin-top: 24px;
+        float: right;
+        margin-left: 16px;
+        margin-right: 10px;
+    } 
+     /* .editatMetas{
+        bottom: 80%;
+        right: 12%;
+        height: 42px;
+        position: fixed; 
+        border-radius: 11px;
+        margin-bottom: 0px;
+        position: static;
+        margin-top: 24px;
+        margin: 0 auto; 
+        float: right;
+        margin-left: 16px;
+        margin-right: 118px;
+    }  */
+    /* .editatMetas{
+        bottom: 84%;
+        position: fixed;
+        right: 4%;
+        height: 42px;
+        border-radius: 11px;
+    } */
+    
+    .pdf-icon {
+        width: 47%;
+        height: 54%;
+        max-width: 80%;
+        color: #dc3545;
+    }
+    .imagenArchivo {
+        position: absolute;
+        left: 27%;
+        top: 60%;
+        width: 72%;
+    }
+    .imagenArchivo2 {
+        position: absolute;
+        left: 25%;
+        top: 46%;
+        width: 72%;
+    }
+    
+}
+@media (min-width:540px){
+    /* .editatMetas {
+        bottom: 85%;
+        position: fixed;
+        right: 3%;
+        height: 42px;
+        border-radius: 11px;
+    } */
+    
+    .editatMetas{
+        bottom: 80%;
+        right: 12%;
+        height: 42px;
+        position: fixed;
+        border-radius: 11px;
+        margin-bottom: 0px;
+        position: static;
+        margin-top: 24px;
+        float: right;
+        margin-left: 16px;
+        margin-right: 14px;
+    } 
+    .pdf-icon {
+        width: 47%;
+        height: 54%;
+        max-width: 80%;
+        color: #dc3545;
+    }
+    .imagenArchivo {
+        position: absolute;
+        left: 27%;
+        top: 60%;
+        width: 72%;
+    }
+    .imagenArchivo2 {
+        position: absolute;
+        left: 20%;
+        top: 55%;
+        width: 72%;
+    
+    }
+   
+}
+@media (min-width: 556px){
+    .cuadros{
+        display: inline-block;
+        width: 48%;
+        height: 84px;
+        background-color: #0057FF;
+        color: white;
+        border-radius: 30px;
+        margin-bottom: 40px;
+    }
+    .total-cuadros{
+        margin-top: 1.5rem!important;
+    }
+    .editatMetas{
+        bottom: 80%;
+        right: 12%;
+        height: 42px;
+        position: fixed;
+        border-radius: 11px;
+        margin-bottom: 0px;
+        position: static;
+        margin-top: 24px;
+        float: right;
+        margin-left: 16px;
+        margin-right: 12px;
+    } 
+    .pdf-icon {
+        width: 47%;
+        height: 54%;
+        max-width: 80%;
+        color: #dc3545;
+    }
+    .imagenArchivo {
+        position: absolute;
+        left: 27%;
+        top: 60%;
+        width: 72%;
+    }
+    .imagenArchivo2 {
+        position: absolute;
+        left: 25%;
+        top: 63%;
+        width: 72%;
+    
+    }
+}
+@media (min-width: 576px) {
+    .contenedor2{
+        width: 350px;
+        height: 60px;
+     
+    }
+    .editatMetas{
+        bottom: 80%;
+        right: 12%;
+        height: 42px;
+        position: fixed; 
+        border-radius: 11px;
+        margin-bottom: 0px;
+        position: static;
+        margin-top: 24px;
+        float: right;
+        margin-left: 16px;
+        margin-right: 45px;
+    } 
+    .pdf-icon {
+        width: 47%;
+        height: 54%;
+        max-width: 80%;
+        color: #dc3545;
+    }
+    .imagenArchivo {
+        position: absolute;
+        left: 27%;
+        top: 60%;
+        width: 72%;
+    }
+    .imagenArchivo2 {
+        position: absolute;
+        left: 25%;
+        top: 63%;
+        width: 72%;
+    
+    }
+   
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .contenedor2{
+        width: 390px;
+        height: 60px;
+    }
+    /* .editatMetas {
+        bottom: 89%;
+        position: fixed;
+        right: 8%;
+        height: 42px;
+        border-radius: 11px;
+    } */
+    .editatMetas{
+        bottom: 80%;
+        right: 12%;
+        height: 42px;
+        position: fixed;
+        border-radius: 11px;
+        margin-bottom: 0px;
+        position: static;
+        margin-top: 24px;
+        float: right;
+        margin-left: 16px;
+        margin-right: 65px;
+    } 
+    .pdf-icon {
+        width: 47%;
+        height: 54%;
+        max-width: 80%;
+        color: #dc3545;
+    }
+    .imagenArchivo {
+        position: absolute;
+        left: 27%;
+        top: 60%;
+        width: 72%;
+    }
+    
+    .imagenArchivo2 {
+        position: absolute;
+        left: 24%;
+        top: 63%;
+        width: 72%;
+    
+    }
+}
+/* // Large devices (desktops, 992px and up) */
+@media (min-width:912px){
+    /* .editatMetas {
+        bottom: 91%;
+        right: 12%;
+        height: 42px;
+        position: fixed;
+        border-radius: 11px;
+    } */
+    .editatMetas{
+        bottom: 80%;
+        right: 12%;
+        height: 42px;
+        position: fixed; 
+        border-radius: 11px;
+        margin-bottom: 0px;
+        position: static;
+        margin-top: 24px;
+        float: right;
+        margin-left: 16px;
+        margin-right: 118px;
+    } 
+    .pdf-icon {
+        width: 47%;
+        height: 54%;
+        max-width: 80%;
+        color: #dc3545;
+    }
+    .imagenArchivo {
+        position: absolute;
+        left: 27%;
+        top: 60%;
+        width: 72%;
+    }
+    .imagenArchivo2 {
+        position: absolute;
+        left: 25%;
+        top: 63%;
+        width: 72%;
+    
+    }
+}
+@media (min-width: 992px) { 
+    .contenedor2{
+        width: 512px;
+        height: 60px;
+     
+    }
+    /* .editatMetas {
+        bottom: 80%;
+        position: fixed;
+        right: 8%;
+        height: 42px;
+        border-radius: 11px;
+    } */
+    .editatMetas{
+        bottom: 80%;
+        right: 12%;
+        height: 42px;
+        position: fixed; 
+        border-radius: 11px;
+        margin-bottom: 0px;
+        position: static;
+        margin-top: 24px;
+        float: right;
+        margin-left: 16px;
+        margin-right: 118px;
+    } 
+    .pdf-icon {
+        width: 47%;
+        height: 54%;
+        max-width: 80%;
+        color: #dc3545;
+    }
+    .imagenArchivo {
+        position: absolute;
+        left: 27%;
+        top: 60%;
+        width: 72%;
+    }
+    .imagenArchivo2 {
+        position: absolute;
+        left: 25%;
+        top: 63%;
+        width: 72%;
+    
+    }
+}
+@media (min-width:1024px){
+    /* .editatMetas {
+        bottom: 79%;
+        position: fixed;
+        right: 5%;
+        height: 42px;
+        border-radius: 11px;
+    } */
+    .cuadros{
+        display: inline-block;
+        width: 32%;
+        height: 60px;
+        background-color: #0057FF;
+        color: white;
+       border-radius: 30px;
+    }
+    .editatMetas{
+        bottom: 80%;
+        right: 12%;
+        height: 42px;
+        position: fixed;
+        border-radius: 11px;
+        margin-bottom: 0px;
+        position: static;
+        margin-top: 24px;
+        float: right;
+        margin-left: 16px;
+        margin-right: 44px;
+    } 
+    .imagenArchivo {
+        position: absolute;
+        left: 27%;
+        top: 60%;
+        width: 72%;
+    }
+    .imagenArchivo2 {
+        position: absolute;
+        left: 25%;
+        top: 63%;
+        width: 72%;
+    
+    }
+    .pdf-icon {
+        width: 47%;
+        height: 54%;
+        max-width: 80%;
+        color: #dc3545;
+    }
+}
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .contenedor2{
+        width: 700px;
+        height: 50px;
+    }
+    .editatMetas{
+        bottom: 80%;
+        right: 12%;
+        height: 42px;
+        position: fixed;
+        border-radius: 11px;
+        margin-bottom: 0px;
+        position: static;
+        margin-top: 24px;
+        float: right;
+        margin-left: 16px;
+        margin-right: 80px
+    } 
+}
+@media (min-width: 1280px){
+    /* .editatMetas {
+        bottom: 82%;
+        position: fixed;
+        right: 7%;
+        height: 42px;
+        border-radius: 11px;
+    } */
+    /* .table-query{
+        width: 50px;
+    } */
+    
+}
+
+
+
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) { 
+  
+   
+   }
