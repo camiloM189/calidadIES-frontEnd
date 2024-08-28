@@ -2,22 +2,21 @@ import { useDispatch } from "react-redux";
 import { useForm } from "../hook/useForm"
 import { enviarUnComentario } from "./store/correoThunks";
 import Swal from "sweetalert2";
-<<<<<<< HEAD
 import { useEffect } from "react";
 
 
-export const Contactanos = () => {
 
+
+
+
+
+
+
+export const Contactanos = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-
-=======
-
-
-export const Contactanos = () => {
->>>>>>> 02d322f686694d4a3ca4f372cf75f3c409e0624d
   const dispatch = useDispatch()
   const {onInputChange,onResetForm,Nombre,Comentario,Email} = useForm('');
   const errorMessage = ''
@@ -32,7 +31,7 @@ export const Contactanos = () => {
 
   return (
     <>
-    <div className='container animate__animated animate__backInDown'>
+    <div className='container animate__animated animate__backInDown mb-5'>
         <article class="text-center mb-3">
           <h1>¿Interesado?</h1>
           <p class="fs-5">Para más información, puedes contactarnos en <a href="#">calidadies2023@gmail.com</a> </p>
@@ -79,7 +78,6 @@ export const Contactanos = () => {
             
           </form>
         </article>
-<<<<<<< HEAD
     </div>
     <footer className="bg-dark p-3">
       <div className="container text-center">
@@ -320,9 +318,7 @@ export const Contactanos = () => {
     </div>
     </footer> 
     </>
-=======
-        </div>
-        </>
->>>>>>> 02d322f686694d4a3ca4f372cf75f3c409e0624d
+
+
   )
 }

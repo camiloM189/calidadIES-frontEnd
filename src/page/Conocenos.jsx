@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -11,12 +10,6 @@ export const Conocenos = () => {
 
 
 
-=======
-import React from 'react'
-
-
-export const Conocenos = () => {
->>>>>>> 02d322f686694d4a3ca4f372cf75f3c409e0624d
   return (
     <>  
 
@@ -74,15 +67,9 @@ export const Conocenos = () => {
 
 
   <section className='row  align-items-lg-center'>
-<<<<<<< HEAD
     <article className='col-md-6 col-12 mb-5'>
     <h2 className='text-start mt-5 text-dark'>Visión</h2>
       <p className='fs-5 justificarTexto '>
-=======
-    <article className='col-md-6 col-12'>
-    <h2 className='text-start mt-5 text-dark'>Visión</h2>
-      <p className='fs-5 justificarTexto'>
->>>>>>> 02d322f686694d4a3ca4f372cf75f3c409e0624d
       En el horizonte del año 2028, visualizamos a Calidad IES como la empresa líder
       indiscutible en el suroccidente colombiano, reconocida por su capacidad para
       impulsar la transformación positiva en el ámbito educativo. Como referente en la
@@ -105,7 +92,6 @@ export const Conocenos = () => {
 
 
  </main>
-<<<<<<< HEAD
  {/* <footer className="bg-dark p-3">
       <div className="container text-center">
     
@@ -373,23 +359,6 @@ export const Conocenos = () => {
       </small>
       {/* <p className='text-white' style={{marginTop:'5%'}}>Email: calidadies2023@gmail.com</p> */}
     </div>
-=======
- <footer className="bg-dark p-3">
-      <div className="container text-center">
-      {/* <nav className="d-flex  justify-content-evenly">
-      
-        <a href="https://facebook.com" target="_blank"><i className="bi bi-facebook fs-3"></i></a>
-        <a href="https://twitter.com" target="_blank"><i className="bi bi-twitter fs-3"></i></a>
-        <a href="https://github.com" target="_blank"><i className="bi bi-github fs-3"></i></a>
-        <a href="https://youtube.com" target="_blank"><i className="bi bi-youtube fs-3"></i></a>
-        <a href="https://instagram.com" target="_blank"><i className="bi bi-instagram fs-3"></i></a>
-        <a href="https://messenger.com" target="_blank"><i className="bi bi-messenger fs-3"></i></a>
-        <a href="https://whatsapp.com" target="_blank"><i className="bi bi-whatsapp fs-3"></i></a>
-      </nav> */}
-      <small className="text-white">&copy; 2023 Aprendiendo Boostrap</small>
-      <p className='text-white'>Email: calidadies2023@gmail.com</p>
-    </div>
->>>>>>> 02d322f686694d4a3ca4f372cf75f3c409e0624d
     </footer> 
     </>
   )

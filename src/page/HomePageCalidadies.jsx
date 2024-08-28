@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 import React, { useEffect } from 'react'
-=======
-import React from 'react'
->>>>>>> 02d322f686694d4a3ca4f372cf75f3c409e0624d
 import { Link } from 'react-router-dom'
 
 
 export const HomePageCalidadies = () => {
-<<<<<<< HEAD
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -15,8 +10,6 @@ export const HomePageCalidadies = () => {
 
 
 
-=======
->>>>>>> 02d322f686694d4a3ca4f372cf75f3c409e0624d
   return (
     <>
   <div className='text-center animate__animated animate__backInDown '>
@@ -74,11 +67,7 @@ export const HomePageCalidadies = () => {
 
 
 
-<<<<<<< HEAD
           <section className='row mb-5' >
-=======
-          <section className='row' >
->>>>>>> 02d322f686694d4a3ca4f372cf75f3c409e0624d
             <article className='col-md-6 col-12'>
                 
             <p className='justificarTexto'> El tejido de nuestra reputación está formado por colaboraciones fructíferas con
@@ -107,7 +96,6 @@ export const HomePageCalidadies = () => {
   
     <footer className="bg-dark p-3">
       <div className="container text-center">
-<<<<<<< HEAD
       <small className="text-white">  
 
       <div className='div-footer'>
@@ -342,10 +330,6 @@ export const HomePageCalidadies = () => {
 
       </small>
       {/* <p className='text-white' style={{marginTop:'5%'}}>Email: calidadies2023@gmail.com</p> */}
-=======
-      <small className="text-white">&copy; 2023 Aprendiendo Boostrap</small>
-      <p className='text-white'>Email: calidadies2023@gmail.com</p>
->>>>>>> 02d322f686694d4a3ca4f372cf75f3c409e0624d
     </div>
     </footer> 
   </>

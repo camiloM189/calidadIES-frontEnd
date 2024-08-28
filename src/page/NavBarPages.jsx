@@ -51,11 +51,7 @@ export const NavBarPages = () => {
               <Link className="nav-link" to={'/auth'}>
                 <p >Aplicacion</p>
               </Link>
-<<<<<<< HEAD
            
-=======
-              {/* <a class="nav-link" href="contacto.html"></a> */}
->>>>>>> 02d322f686694d4a3ca4f372cf75f3c409e0624d
             </li>
           </ul>
         </div>
