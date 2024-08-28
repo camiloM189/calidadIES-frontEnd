@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -14,6 +15,16 @@ export const Servicios = () => {
     <>
 
     <div className='container mt-5 animate__animated animate__backInDown mb-5'>
+=======
+import React from 'react'
+
+
+export const Servicios = () => {
+  return (
+    <>
+
+    <div className='container mt-5 animate__animated animate__backInDown'>
+>>>>>>> 02d322f686694d4a3ca4f372cf75f3c409e0624d
   <section id="servicios"class="row min-vh-100 align-items-lg-center ">
           <article class="col-12 col-md-6 col-lg-4 d-flex">
             <div class="card mx-auto  mb-3 cardServicios " >
@@ -114,6 +125,7 @@ export const Servicios = () => {
 
         </section>
         </div>
+<<<<<<< HEAD
     {/* <footer className="bg-dark p-3">
       <div className="container text-center">
       <small className="text-white">
@@ -383,6 +395,22 @@ export const Servicios = () => {
 
       </small>
       {/* <p className='text-white' style={{marginTop:'5%'}}>Email: calidadies2023@gmail.com</p> */}
+=======
+        <footer className="bg-dark p-3">
+      <div className="container text-center">
+      {/* <nav className="d-flex  justify-content-evenly">
+      
+        <a href="https://facebook.com" target="_blank"><i className="bi bi-facebook fs-3"></i></a>
+        <a href="https://twitter.com" target="_blank"><i className="bi bi-twitter fs-3"></i></a>
+        <a href="https://github.com" target="_blank"><i className="bi bi-github fs-3"></i></a>
+        <a href="https://youtube.com" target="_blank"><i className="bi bi-youtube fs-3"></i></a>
+        <a href="https://instagram.com" target="_blank"><i className="bi bi-instagram fs-3"></i></a>
+        <a href="https://messenger.com" target="_blank"><i className="bi bi-messenger fs-3"></i></a>
+        <a href="https://whatsapp.com" target="_blank"><i className="bi bi-whatsapp fs-3"></i></a>
+      </nav> */}
+      <small className="text-white">&copy; 2023 Aprendiendo Boostrap</small>
+      <p className='text-white'>Email: calidadies2023@gmail.com</p>
+>>>>>>> 02d322f686694d4a3ca4f372cf75f3c409e0624d
     </div>
     </footer> 
     </>

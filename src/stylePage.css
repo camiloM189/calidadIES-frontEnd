@@ -169,6 +169,7 @@ background-position: center;
 .second-text-color:hover{
     color: var(--first-color);
 }
+<<<<<<< HEAD
 
 
 .div-footer{
@@ -207,6 +208,8 @@ background-position: center;
 
 
 
+=======
+>>>>>>> 02d322f686694d4a3ca4f372cf75f3c409e0624d
 /* // X-Small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap */
 @media (min-width: 360px) {
@@ -218,6 +221,7 @@ background-position: center;
         right: 74px;
     }
 
+<<<<<<< HEAD
 
     .div-footer{
         display:flex;
@@ -240,6 +244,8 @@ background-position: center;
 
 
 
+=======
+>>>>>>> 02d322f686694d4a3ca4f372cf75f3c409e0624d
  }
 @media (min-width: 375px) {
     .imgLogo{
@@ -250,6 +256,7 @@ background-position: center;
         right: 74px;
     }
 
+<<<<<<< HEAD
     .div-footer{
         display:flex;
         align-items: center;
@@ -308,6 +315,10 @@ background-position: center;
 
 
 
+=======
+ }
+/* // Small devices (landscape phones, 576px and up) */
+>>>>>>> 02d322f686694d4a3ca4f372cf75f3c409e0624d
 @media (min-width: 576px) {
     .imgLogo{
         width: 10%;
@@ -316,6 +327,7 @@ background-position: center;
         top: -16px;
     }
 
+<<<<<<< HEAD
     .div-footer{
         display:flex;
         align-items: center;
@@ -332,10 +344,13 @@ background-position: center;
         align-items: flex-start;
     }
 
+=======
+>>>>>>> 02d322f686694d4a3ca4f372cf75f3c409e0624d
  }
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
+<<<<<<< HEAD
     .div-footer{
         display:flex;
         align-items: center;
@@ -351,6 +366,9 @@ background-position: center;
         flex-direction: column;
         align-items: flex-start;
     }
+=======
+
+>>>>>>> 02d322f686694d4a3ca4f372cf75f3c409e0624d
  }
 
 /* // Large devices (desktops, 992px and up) */
@@ -363,6 +381,7 @@ background-position: center;
         right: 0px;
         left: 20px;
     }
+<<<<<<< HEAD
     .div-footer{
         display:flex;
         align-items: center;
@@ -379,12 +398,15 @@ background-position: center;
         flex-direction: column;
         align-items: flex-start;
     }
+=======
+>>>>>>> 02d322f686694d4a3ca4f372cf75f3c409e0624d
 .nav-item:hover{
     background-color: transparent !important;
 
     }
 }
 
+<<<<<<< HEAD
 @media (min-width: 1024px) {
     .imgLogo{
         width: 10%;
@@ -413,6 +435,8 @@ background-position: center;
 }
 
 
+=======
+>>>>>>> 02d322f686694d4a3ca4f372cf75f3c409e0624d
 
 
 /* // X-Large devices (large desktops, 1200px and up) */
@@ -424,6 +448,7 @@ background-position: center;
         top: -30px;
     }
     
+<<<<<<< HEAD
 
     .div-footer{
         display: flex;
@@ -512,6 +537,13 @@ background-position: center;
 
 } */
 
+=======
+    
+    }
+
+
+
+>>>>>>> 02d322f686694d4a3ca4f372cf75f3c409e0624d
  
 
 /* // XX-Large devices (larger desktops, 1400px and up) */

@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { useForm } from "../hook/useForm"
 import { enviarUnComentario } from "./store/correoThunks";
 import Swal from "sweetalert2";
+<<<<<<< HEAD
 import { useEffect } from "react";
 
 
@@ -12,6 +13,11 @@ export const Contactanos = () => {
   }, []);
 
 
+=======
+
+
+export const Contactanos = () => {
+>>>>>>> 02d322f686694d4a3ca4f372cf75f3c409e0624d
   const dispatch = useDispatch()
   const {onInputChange,onResetForm,Nombre,Comentario,Email} = useForm('');
   const errorMessage = ''
@@ -73,6 +79,7 @@ export const Contactanos = () => {
             
           </form>
         </article>
+<<<<<<< HEAD
     </div>
     <footer className="bg-dark p-3">
       <div className="container text-center">
@@ -313,5 +320,9 @@ export const Contactanos = () => {
     </div>
     </footer> 
     </>
+=======
+        </div>
+        </>
+>>>>>>> 02d322f686694d4a3ca4f372cf75f3c409e0624d
   )
 }
